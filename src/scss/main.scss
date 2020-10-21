@@ -3,9 +3,19 @@
 @import "_variables";
 @import "modules/hello.scss";
 
+:root{
+  --background-color: #3baaff;
+  --icon: url('../assets/img/water-glass.svg');
+  --buttonAdd:#fff;
+  --button-Hover:rgb(219, 240, 255);
+  --buttonRemovecolor:white;
+  --removeColor:#fff;
+  --header:#fff;
+}
+
 body {
-  background: #3baaff;
-  color: #fff;
+  background:var(--background-color);
+  color: var(--header);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,9 +24,33 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.hello__logo {
-  height: 400px;
-  z-index: 2;
+@keyframes glassWater{
+  0%{
+    transform:scale(1)
+  }
+  50%{
+    transform:scale(1.10)
+  }
+  100%{
+    transform:scale(1)
+  }
+}
+
+.glass{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:var(--icon);
+  width: 280px;
+  height:280px;
+  animation: glassWater 5s ease-in-out infinite;
+  &__logo{
+    height: 400px;
+  }
+  &__counter{
+  font-size: 110px;
+  color: black;
+  }
 }
 
 .header {
@@ -35,11 +69,14 @@ body {
   color: black;
   font-size: 18px;
   border-radius: 3px;
-  background-color: #fff;
+  background-color: var(--buttonAdd);
   border: none;
   font-weight: bold;
+  transition: transform 0.1s linear;
+  transform-origin: center;
   &:hover{
-    background-color: rgb(219, 240, 255);
+    background-color: var(--button-Hover);
+    transform:scale(1.15);
   }
 }
 
@@ -47,21 +84,28 @@ body {
   margin-top: 15px;
   width: 180px;
   padding: 10px;
-  color: white;
+  color: var(--removeColor);
   background-color: rgba(128, 128, 128, 0);
   border: none;
   font-size: 14px;
+  transition: transform 0.15s linear;
+  transform-origin: center;
   &:hover {
-    color: rgb(219, 240, 255);
+    color: var(--button-Hover);
+    transform: scale(1.15);
   }
 }
 
-.glass__counter{
-  margin-top: 150px;
-  margin-left: -35px;
-  font-size: 130px;
-  position: absolute;
-  display:block;
-  z-index: 3;
-  color: black;
+.darkMode{
+  size: 50px;
+  margin-bottom: 120px;
+  border:1px solid;
+  outline: none;
+  border-radius: 5%;
+  background-color: rgba(51, 51, 51, 0);
+  font-weight: bold;
+  transition: transform 0.8s linear;
+  &:hover{
+    transform:scale(1.2);
+  }
 }
