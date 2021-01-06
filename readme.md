@@ -1,5 +1,3 @@
-![cover](..\src\assets\img\logo.svg)
-
 # HYDRAPP
 
 Simple tool to count a drink glass of water per day.
