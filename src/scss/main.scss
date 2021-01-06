@@ -109,3 +109,15 @@ body {
     transform:scale(1.2);
   }
 }
+
+.description{
+  color: #fff;
+  width: 250px;
+  height: 200px;
+  position: absolute;
+  display: inline;
+  margin-right: 70%;
+  font-style: arial;
+  font-size: 20px;
+  column-gap: 1px;
+}
