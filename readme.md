@@ -1,6 +1,6 @@
 # HYDRAPP
 
-Simple tool to count a drink glass of water per day.
+Simple tool to count drink glass of water per day.
 
 ## How to use it?
 
